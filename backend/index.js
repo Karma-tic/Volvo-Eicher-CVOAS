@@ -7,8 +7,8 @@ app.use(express.json());
 // DB
 connectDB();
 
-// Routes
 app.use("/api/plants", require("./routes/plantRoutes"));
+app.use("/api/parts", require("./routes/partRoutes"));
 
 app.get("/", (req, res) => {
   res.send("Volvo–Eicher Backend Running");
