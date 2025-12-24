@@ -9,6 +9,8 @@ connectDB();
 
 app.use("/api/plants", require("./routes/plantRoutes"));
 app.use("/api/parts", require("./routes/partRoutes"));
+app.use("/api/stock", require("./routes/stockRoutes"));
+app.use("/api/stock-movements", require("./routes/stockMovementRoutes"));
 
 app.get("/", (req, res) => {
   res.send("Volvo–Eicher Backend Running");
