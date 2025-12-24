@@ -6,17 +6,17 @@ function App() {
   const [stock, setStock] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:5001/api/plants")
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/plants`)
     .then((res) => res.json())
     .then((data) => setPlants(data))
     .catch((err) => console.error(err));
 
-  fetch("http://localhost:5001/api/parts")
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/parts`)
     .then((res) => res.json())
     .then((data) => setParts(data))
     .catch((err) => console.error(err));
 
-  fetch("http://localhost:5000/api/stock")
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/stock`)
     .then((res) => res.json())
     .then((data) => setStock(data))
     .catch((err) => console.error(err));
