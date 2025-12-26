@@ -28,6 +28,7 @@ router.get("/", async (req, res) => {
     const stock = await Stock.find()
       .populate("plantId", "name code")
       .populate("partId", "partName partCode");
+
     res.json(stock);
   } catch (error) {
     res.status(500).json({ message: error.message });
